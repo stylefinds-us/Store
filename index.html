@@ -1,38 +1,235 @@
 
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StyleFinds - Fashion Store</title>
-    <!-- Tailwind CSS for styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+        body { background-color: #f9fafb; color: #1f2937; }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background-color: #000;
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+        }
+        .hero-content {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .hero h1 { font-size: 28px; margin-bottom: 10px; font-weight: bold; }
+        .hero p { font-size: 14px; margin-bottom: 20px; color: #e5e7eb; }
+        .hero-btn {
+            display: inline-block;
+            background: #fff;
+            color: #000;
+            padding: 10px 24px;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* Product Grid Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 10px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+        }
+
+        /* Product Card Style */
+        .canva-card {
+            background: rgb(255, 255, 255);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .canva-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 10px;
+        }
+        .canva-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: rgb(26, 26, 26);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 4px;
+        }
+        .canva-price {
+            font-size: 14px;
+            font-weight: bold;
+            color: rgb(184, 134, 11);
+            margin-bottom: 8px;
+        }
+        .real-amazon-btn {
+            display: block;
+            width: 100%;
+            background: rgb(26, 26, 26);
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 8px 0;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 13px;
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+<body>
 
     <!-- Hero Section -->
-    <header class="relative bg-black text-white py-20 px-6 text-center overflow-hidden">
-        <div class="absolute inset-0 opacity-40">
-            <img src="https://m.media-amazon.com/images/I/71V0j8+SPZL._AC_SY741_.jpg" alt="Hero Background" class="w-full h-full object-cover">
-        </div>
-        <div class="relative max-w-2xl mx-auto space-y-4">
-            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Discover Your Unique Style</h1>
-            <p class="text-lg text-gray-200">Explore our exclusive curated collection of trendy accessories, casual wear, and traditional outfits.</p>
-            <a href="#product-grid" class="inline-block mt-4 bg-white text-black font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-gray-200 transition">Shop Collection</a>
+    <header class="hero">
+        <img src="https://m.media-amazon.com/images/I/71V0j8+SPZL._AC_SY741_.jpg" alt="Hero Background">
+        <div class="hero-content">
+            <h1>Discover Your Unique Style</h1>
+            <p>Explore our exclusive curated collection of trendy accessories, casual wear, and traditional outfits.</p>
+            <a href="#product-grid" class="hero-btn">Shop Collection</a>
         </div>
     </header>
 
     <!-- Main Product Grid Section -->
-    <main id="product-grid" class="max-w-7xl mx-auto px-4 py-12">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        </div>    
 
-  </header>   
-          
-<main class="max-w-7xl mx-auto px-4 py-10 space-y-16">  
-<section>    
+            <!-- Card 4: Trendy Hair Clip Set -->
+            <div data-template-id="acc-card-4" class="canva-card">    
+              <div>
+                <img data-template-id="acc-img-4" class="canva-image" loading="lazy" src="https://m.media-amazon.com/images/I/81jPlk1GtAL._AC_SY695_.jpg" alt="Hair Clips">    
+                <div class="card-body">    
+                 <p data-template-id="acc-title-4" class="canva-text">Trendy Hair Clip Set</p>    
+                 <p data-template-id="acc-price-4" class="canva-price">$25.75</p>    
+                </div>
+              </div>
+              <div style="padding: 0 10px 10px 10px;">
+                <a href="https://amzn.to/4xdA3QG" target="_blank" rel="noopener noreferrer" data-template-id="acc-cta-4" class="real-amazon-btn">Shop on Amazon</a>    
+              </div>
+            </div>    
 
-    <h2 data-template-id="section-casual-title" class="canva-text text-2xl font-bold mb-6" style="color: rgb(26, 26, 26); font-weight: 700; font-style: normal; font-size: 24px;">Casual &amp; Trendy Outfits</h2>      
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4"> 
+            <!-- Casual Card 1: Plaid Oversized Blazer -->
+            <div data-template-id="casual-card-1" class="canva-card">    
+              <div>
+                <img data-template-id="casual-img-1" class="canva-image" loading="lazy" src="https://m.media-amazon.com/images/I/71KxhMilPuL._AC_SX569_.jpg" alt="Plaid Blazer">    
+                <div class="card-body">    
+                 <p data-template-id="casual-title-1" class="canva-text">Plaid Oversized Blazer</p>    
+                 <p data-template-id="casual-price-1" class="canva-price">$12.99</p>    
+                </div>
+              </div>
+              <div style="padding: 0 10px 10px 10px;">
+                <a href="https://amzn.to/4wxJWbM" target="_blank" rel="noopener noreferrer" data-template-id="casual-cta-1" class="real-amazon-btn">Shop on Amazon</a>    
+              </div>
+            </div>  
+
+            <!-- Casual Card 2: Summer Print Shirt -->
+            <div data-template-id="casual-card-2" class="canva-card">    
+              <div>
+                <img data-template-id="casual-img-2" class="canva-image" loading="lazy" src="https://m.media-amazon.com/images/I/61wxqVkE5pL._AC_SY879_.jpg" alt="Summer Shirt">    
+                <div class="card-body">    
+                 <p data-template-id="casual-title-2" class="canva-text">Summer Print Shirt</p>    
+                 <p data-template-id="casual-price-2" class="canva-price">$38.28</p>    
+                </div>
+              </div>
+              <div style="padding: 0 10px 10px 10px;">
+                <a href="https://amzn.to/4g5Z8qM" target="_blank" rel="noopener noreferrer" data-template-id="casual-cta-2" class="real-amazon-btn">Shop on Amazon</a>    
+              </div>
+            </div>    
+
+            <!-- Casual Card 3: Classic Denim Jacket -->
+            <div data-template-id="casual-card-3" class="canva-card">    
+              <div>
+                <img data-template-id="casual-img-3" class="canva-image" loading="lazy" src="https://m.media-amazon.com/images/I/51X6Hpt5zLL._AC_SY695_.jpg" alt="Denim Jacket">    
+                <div class="card-body">    
+                 <p data-template-id="casual-title-3" class="canva-text">Classic Denim Jacket</p>    
+                 <p data-template-id="casual-price-3" class="canva-price">$19.99</p>    
+                </div>
+              </div>
+              <div style="padding: 0 10px 10px 10px;">
+                <a href="https://amzn.to/4540g8a" target="_blank" rel="noopener noreferrer" data-template-id="casual-cta-3" class="real-amazon-btn">Shop on Amazon</a>    
+              </div>
+            </div>    
+
+            <!-- Casual Card 4: Minimalist White Sneakers -->
+            <div data-template-id="casual-card-4" class="canva-card">    
+              <div>
+                <img data-template-id="casual-img-4" class="canva-image" loading="lazy" src="https://m.media-amazon.com/images/I/71aIHSYKhgL._AC_SY879_.jpg" alt="White Sneakers">    
+                <div class="card-body">    
+                 <p data-template-id="casual-title-4" class="canva-text">Minimalist White Sneakers</p>    
+                 <p data-template-id="casual-price-4" class="canva-price">$19.25</p>    
+                </div>
+              </div>
+              <div style="padding: 0 10px 10px 10px;">
+                <a href="https://amzn.to/4g4ZkXo" target="_blank" rel="noopener noreferrer" data-template-id="casual-cta-4" class="real-amazon-btn">Shop on Amazon</a>    
+              </div>
+            </div>    
+                 
+            <!-- Trad Card 1: Embroidered Red Anarkali -->
+            <div data-template-id="trad-card-1" class="canva-card">    
+              <div>
+                <img data-template-id="trad-img-1" class="canva-image" loading="lazy" src="https://m.media-amazon.com/images/I/71V0j8+SPZL._AC_SY741_.jpg" alt="Red Anarkali">    
+                <div class="card-body">    
+                 <p data-template-id="trad-title-1" class="canva-text">Embroidered Red Anarkali</p>    
+                 <p data-template-id="trad-price-1" class="canva-price">$29.99</p>    
+                </div>
+              </div>
+              <div style="padding: 0 10px 10px 10px;">
+     <p data-template-id="acc-title-4" class="canva-text">Trendy Hair Clip Set</p>
+                 <p data-template-id="acc-price-4" class="canva-price">$29.99</p>
+                </div>
+              </div>
+              <div style="padding: 0 10px 10px 10px;">
+                <a href="https://amzn.to/4bsfU0K" target="_blank" rel="noopener noreferrer" data-template-id="acc-cta-4" class="real-amazon-btn">Shop on Amazon</a>
+              </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 StyleFinds. All Rights Reserved.</p>
+    </footer>
+
+</body>
+    </html>
 
 <div data-template-id="casual-card-1" class="canva-card rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow" style="background: rgb(255, 255, 255);">      
   <img data-template-id="casual-img-1" class="canva-image w-full h-56 object-cover" loading="lazy" src="https://m.media-amazon.com/images/I/71rXM0qXAdL._AC_SX679_.jpg" alt="Plaid Blazer">      
